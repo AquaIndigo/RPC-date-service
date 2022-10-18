@@ -1,0 +1,15 @@
+syntax = "proto3";
+package date_rpc;
+
+service DateService {
+  rpc GetDate (DateRequest) returns (DateResponse);
+}
+
+message DateRequest {
+  string token = 1;
+}
+
+message DateResponse {
+  string analogue_time = 1;
+  uint64 digital_time = 2;
+}
