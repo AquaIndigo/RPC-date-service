@@ -22,7 +22,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         let response: tonic::Response<DateResponse> = client.get_date(request).await?;
         let date_resp = response.get_ref();
         let digit_time: u64 = date_resp.digital_time;
-        // println!("Time on localhost is {}", )
+
         println!("Time on localhost is {}", date_resp.digital_time);
         if last_sec_per_min <= digit_time - 60 {
             last_sec_per_min = digit_time;
